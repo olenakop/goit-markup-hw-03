@@ -15,11 +15,6 @@ html {
   --secondary-text-color: #757575;
 }
 body {
-  width: 1230px;
-  margin: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: crimson;
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
 
@@ -30,6 +25,14 @@ body {
   line-height: 1.14;
 
   letter-spacing: 0.02em;
+}
+.h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
 }
 h2 {
   font-weight: bold;
@@ -44,13 +47,12 @@ a {
 .logo > span {
   color: #2196f3;
 }
-header {
+.container {
   padding-top: 0;
   width: 1230px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  background-color: crimson;
 }
 .logo {
   margin-right: 85px;
@@ -63,8 +65,8 @@ header {
   letter-spacing: 0.03em;
   text-decoration: none;
 }
-.container .main-nav,
-.container .auth-nav {
+.main-nav,
+.auth-nav {
   align-items: center;
 }
 .main-nav {
@@ -72,7 +74,6 @@ header {
 }
 .site-nav {
   display: flex;
-  background-color: chartreuse;
 }
 .logo:hover,
 .logo:focus {
@@ -83,8 +84,6 @@ header {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-
-  background-color: brown;
 }
 
 .site-nav .link:not(:last-child) {
@@ -170,12 +169,10 @@ header {
   letter-spacing: 0.03em;
   font-style: normal;
   list-style: none;
-  background-color: crimson;
 }
 .work-list .item {
   margin-right: 30px;
   margin-bottom: 30px;
-  background-color: chartreuse;
 }
 .work-list .image {
   width: 370px;
@@ -196,19 +193,21 @@ header {
   padding-right: 15px;
   padding-left: 15px;
   margin: auto;
-  display: flex;
-  background-color: crimson;
-  justify-content: space-between;
 }
-.footer {
+.footer-wrapper {
+  display: flex;
+
+  justify-content: space-between;
   align-items: baseline;
 }
 
-.text {
+.item .logo .text {
   color: var(--secondary-text-color);
 }
 
 .adress .text {
+  margin-top: 8px;
+  margin-bottom: 9px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -219,6 +218,8 @@ header {
   color: rgba(255, 255, 255, 0.6);
 }
 .adress .version {
+  margin-bottom: 9px;
+  margin-top: 9px;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -230,22 +231,34 @@ header {
 .version {
   background-color: #2f303a;
 }
-.adress .text {
-  background-color: #2f303a;
+.copy {
+  text-align: center;
 }
-
 .adress .version:hover,
 .adress .version:focus {
   color: var(--accent-color);
 }
 
 .go {
+  margin-bottom: 20px;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
+}
+.social-site .item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-site {
+  display: flex;
+}
+.social-site .item {
+  list-style: none;
+}
+.social-site .link-social {
+  text-decoration: none;
 }
 
 .news {
@@ -291,13 +304,8 @@ header {
   background-color: var(--accent-color);
 }
 .proposition {
-  width: 1230px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: crimson;
   display: flex;
-  margin-top: 94px;
+
   list-style: none;
 }
 .proposition .item:not(:last-child) {
@@ -305,12 +313,14 @@ header {
 }
 .proposition-img:hover,
 .proposition-img:focus {
-  background-color: var(--accent-color);
 }
-.proposition {
-  margin-bottom: 30px;
+.item-img {
+  align-items: center;
+  justify-content: center;
 }
-.proposition h3 {
+
+.title-proposition {
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 h3 {
@@ -322,7 +332,7 @@ h3 {
   color: var(--primary-text-color);
 }
 .proposition-text {
-  margin-bottom: 94px;
+  width: 270px;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.71;
@@ -336,14 +346,16 @@ h3 {
   margin-bottom: 188px;
   list-style: none;
   margin-bottom: 50px;
-  background-color: chartreuse;
 }
 .works-list .item:not(:last-child) {
   margin-right: 30px;
 }
-
+.main-works {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .title-main-works {
-  background-color: chartreuse;
+  margin-bottom: 50px;
 
   font-weight: bold;
   font-size: 36px;
@@ -354,6 +366,8 @@ h3 {
   color: var(--primary-text-color);
 }
 .type-works {
+  padding-top: 27px;
+  padding-bottom: 27px;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
@@ -361,6 +375,7 @@ h3 {
   text-transform: uppercase;
 
   color: var(--primary-white-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .teams {
@@ -375,6 +390,8 @@ h3 {
   color: var(--primary-text-color);
 }
 .name-teams {
+  margin-left: 0;
+  margin-top: 0px;
   display: flex;
 
   list-style: none;
@@ -389,9 +406,26 @@ h3 {
   margin-bottom: 10px;
 }
 .our-teams {
-  margin-bottom: 188px;
-  background-color: crimson;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  background-color: #f5f4fa;
 }
+.footer .copy {
+  justify-content: center;
+}
+
+.teams-site {
+  display: flex;
+  text-align: center;
+
+  padding-left: 0px;
+  margin-top: 28px;
+  list-style: none;
+}
+.teams-site.item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .name {
   font-weight: 500;
   font-size: 16px;
@@ -408,7 +442,10 @@ h3 {
 
   color: var(--primary-text-color);
 }
-
+.our-clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .clients {
   margin-bottom: 50px;
   font-weight: bold;
@@ -424,4 +461,15 @@ h3 {
 .clients.list:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+}
+.clients-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+.clients-list .list:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-list a {
+  text-decoration: none;
 }
